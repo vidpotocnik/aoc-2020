@@ -8,7 +8,10 @@ import (
 
 func main() {
 
-	puzzleFile, _ := ioutil.ReadFile("../puzzle.txt")
+	puzzleFile, err := ioutil.ReadFile("../puzzle.txt")
+	if err != nil {
+		log.Print(err)
+	}
 	puzzleContent := string(puzzleFile)
 	puzzles := strings.Split(puzzleContent, "\n\n")
 
