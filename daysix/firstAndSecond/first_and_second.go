@@ -30,8 +30,8 @@ func main() {
 	}
 	data = append(data, s)
 
-	log.Print("First task: ", CountElements(data, firstTask))
-	log.Print("Second task: ", CountElements(data, secondTask))
+	log.Print("First task: ", countElements(data, firstTask))
+	log.Print("Second task: ", countElements(data, secondTask))
 }
 
 func firstTask(puzzle []string) int {
@@ -74,7 +74,7 @@ func secondTask(puzzles []string) (result int) {
 	return result
 }
 
-func CountElements(data [][]string, f func(i []string) int) (result int) {
+func countElements(data [][]string, f func(i []string) int) (result int) {
 	for _, e := range data {
 		result += f(e)
 	}
